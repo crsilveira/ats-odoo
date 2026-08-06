@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Term List View -->
+        <record id="view_insurance_term_list" model="ir.ui.view">
+            <field name="name">insurance.term.list</field>
+            <field name="model">insurance.term</field>
+            <field name="arch" type="xml">
+                <list string="Policy Terms">
+                    <field name="name"/>
+                    <field name="duration_months"/>
+                    <field name="premium_amount"/>
+                    <field name="currency_id" groups="base.group_multi_currency"/>
+                    <field name="active"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Term Form View -->
+        <record id="view_insurance_term_form" model="ir.ui.view">
+            <field name="name">insurance.term.form</field>
+            <field name="model">insurance.term</field>
+            <field name="arch" type="xml">
+                <form string="Policy Term">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="duration_months"/>
+                            </group>
+                            <group>
+                                <field name="currency_id" groups="base.group_multi_currency"/>
+                                <field name="premium_amount"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Term Action -->
+        <record id="action_insurance_term" model="ir.actions.act_window">
+            <field name="name">Policy Terms</field>
+            <field name="res_model">insurance.term</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{'search_default_active': 1}</field>
+        </record>
+    </data>
+</odoo>

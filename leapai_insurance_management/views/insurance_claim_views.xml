@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Claim Form View -->
+        <record id="view_insurance_claim_form" model="ir.ui.view">
+            <field name="name">insurance.claim.form</field>
+            <field name="model">insurance.claim</field>
+            <field name="arch" type="xml">
+                <form string="Insurance Claim">
+                    <header>
+                        <button name="action_submit"
+                                string="Submit"
+                                type="object"
+                                class="btn-primary"
+                                invisible="state != 'draft'"/>
+                        <button name="action_to_approve"
+                                string="Send for Approval"
+                                type="object"
+                                class="btn-primary"
+                                invisible="state != 'submitted'"/>
+                        <button name="action_approve"
+                                string="Approve"
+                                type="object"
+                                class="btn-success"
+                                invisible="state != 'to_approve'"
+                                groups="leapai_insurance_management.group_insurance_manager"/>
+                        <button name="action_reject"
+                                string="Reject"
+                                type="object"
+                                class="btn-danger"
+                                invisible="state not in ['submitted', 'to_approve']"
+                                groups="leapai_insurance_management.group_insurance_manager"/>
+                        <button name="action_reset"
+                                string="Reset to Draft"
+                                type="object"
+                                invisible="state not in ['submitted', 'rejected']"/>
+                        <button name="action_create_settlement"
+                                string="Create Settlement Bill"
+                                type="object"
+                                invisible="state != 'approved'"
+                                groups="leapai_insurance_management.group_insurance_manager"/>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,submitted,to_approve,approved"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_invoices"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-usd"
+                                    invisible="invoice_count == 0">
+                                <field name="invoice_count" widget="statinfo" string="Settlements"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group string="Claim Information">
+                                <field name="name"/>
+                                <field name="reference" readonly="1"/>
+                                <field name="policy_id"/>
+                                <field name="partner_id" readonly="1"/>
+                                <field name="claim_date"/>
+                            </group>
+                            <group string="Claim Details">
+                                <field name="reason"/>
+                                <field name="currency_id" groups="base.group_multi_currency"/>
+                                <field name="claim_amount"/>
+                                <field name="settlement_amount"/>
+                            </group>
+                        </group>
+                        <group string="Reason Details">
+                            <field name="reason_detail" nolabel="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Rejection Reason" invisible="state != 'rejected'">
+                                <field name="rejection_reason"/>
+                            </page>
+                            <page string="Supporting Documents">
+                                <field name="document_ids" widget="many2many_binary"/>
+                            </page>
+                            <page string="Notes">
+                                <field name="note"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <!-- Claim List View -->
+        <record id="view_insurance_claim_list" model="ir.ui.view">
+            <field name="name">insurance.claim.list</field>
+            <field name="model">insurance.claim</field>
+            <field name="arch" type="xml">
+                <list string="Insurance Claims" decoration-success="state == 'approved'" decoration-danger="state == 'rejected'" decoration-warning="state == 'to_approve'">
+                    <field name="name"/>
+                    <field name="reference"/>
+                    <field name="policy_id"/>
+                    <field name="partner_id"/>
+                    <field name="claim_date"/>
+                    <field name="reason"/>
+                    <field name="claim_amount"/>
+                    <field name="currency_id" groups="base.group_multi_currency"/>
+                    <field name="settlement_amount"/>
+                    <field name="state" widget="badge" decoration-info="state == 'draft'" decoration-danger="state == 'rejected'" decoration-warning="state == 'submitted'" decoration-success="state == 'approved'"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Claim Search View -->
+        <record id="view_insurance_claim_search" model="ir.ui.view">
+            <field name="name">insurance.claim.search</field>
+            <field name="model">insurance.claim</field>
+            <field name="arch" type="xml">
+                <search string="Insurance Claims">
+                    <field name="name"/>
+                    <field name="reference"/>
+                    <field name="policy_id"/>
+                    <field name="partner_id"/>
+                    <filter string="Draft" name="draft" domain="[('state', '=', 'draft')]"/>
+                    <filter string="Submitted" name="submitted" domain="[('state', '=', 'submitted')]"/>
+                    <filter string="Pending Approval" name="to_approve" domain="[('state', '=', 'to_approve')]"/>
+                    <filter string="Approved" name="approved" domain="[('state', '=', 'approved')]"/>
+                    <filter string="Rejected" name="rejected" domain="[('state', '=', 'rejected')]"/>
+                    <group>
+                        <filter string="Policy" name="group_by_policy" context="{'group_by': 'policy_id'}"/>
+                        <filter string="Reason" name="group_by_reason" context="{'group_by': 'reason'}"/>
+                        <filter string="Status" name="group_by_state" context="{'group_by': 'state'}"/>
+                        <filter string="Claim Date" name="group_by_claim_date" context="{'group_by': 'claim_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Claim Actions -->
+        <record id="action_insurance_claim" model="ir.actions.act_window">
+            <field name="name">All Claims</field>
+            <field name="res_model">insurance.claim</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <record id="action_insurance_my_claim" model="ir.actions.act_window">
+            <field name="name">My Claims</field>
+            <field name="res_model">insurance.claim</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('create_uid', '=', uid)]</field>
+        </record>
+    </data>
+</odoo>

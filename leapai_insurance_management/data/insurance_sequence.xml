@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Policy Sequence -->
+        <record id="seq_insurance_policy" model="ir.sequence">
+            <field name="name">Insurance Policy</field>
+            <field name="code">insurance.policy</field>
+            <field name="prefix">INS/%(year)s/%(month)s/</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next">1</field>
+        </record>
+
+        <!-- Claim Sequence -->
+        <record id="seq_insurance_claim" model="ir.sequence">
+            <field name="name">Insurance Claim</field>
+            <field name="code">insurance.claim</field>
+            <field name="prefix">CLM/%(year)s/%(month)s/</field>
+            <field name="padding">4</field>
+            <field name="number_increment">1</field>
+            <field name="number_next">1</field>
+        </record>
+    </data>
+</odoo>

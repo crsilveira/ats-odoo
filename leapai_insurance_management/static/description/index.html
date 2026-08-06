@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Insurance Management - Odoo 19</title>
+</head>
+<body style="margin:0;padding:0;font-family:'Segoe UI',Arial,sans-serif;background:#f8fafc;color:#1e293b;">
+<style>
+    *{box-sizing:border-box;}
+    a{color:#2563eb;text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    .hero{background:linear-gradient(135deg,#0f3d24 0%,#1a5c38 55%,#2d8a56 100%);color:#fff;padding:60px 40px;text-align:center;}
+    .hero h1{font-size:3em;margin:0 0 16px;font-weight:800;letter-spacing:-1px;}
+    .hero .tagline{font-size:1.25em;color:#a7f3d0;margin-bottom:32px;max-width:720px;margin-left:auto;margin-right:auto;}
+    .badges{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+    .badge{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:6px 18px;font-size:0.9em;color:#d1fae5;}
+    .badge.green{background:rgba(16,185,129,0.3);border-color:#10b981;color:#a7f3d0;}
+
+    .section{padding:60px 40px;max-width:1100px;margin:0 auto;}
+    .section-title{font-size:2em;font-weight:700;text-align:center;margin-bottom:8px;color:#0f3d24;}
+    .section-sub{text-align:center;color:#64748b;margin-bottom:40px;font-size:1.05em;}
+
+    .gallery-wrap{background:#0f3d24;padding:50px 40px;}
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:1100px;margin:0 auto;}
+    .gallery-thumb{cursor:pointer;border-radius:8px;overflow:hidden;border:2px solid #1a5c38;transition:border-color .2s,transform .2s;}
+    .gallery-thumb:hover{border-color:#34d399;transform:scale(1.02);}
+    .gallery-thumb img{width:100%;height:210px;object-fit:cover;display:block;}
+    .gallery-thumb p{background:#1e293b;color:#cbd5e1;font-size:.85em;margin:0;padding:8px 12px;text-align:center;}
+
+    .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);z-index:9999;justify-content:center;align-items:center;}
+    .lightbox.open{display:flex;}
+    .lightbox img{max-width:90%;max-height:85vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+    .lightbox-close{position:absolute;top:20px;right:30px;color:#fff;font-size:2.5em;cursor:pointer;line-height:1;}
+    .lightbox-caption{position:absolute;bottom:20px;color:#e2e8f0;font-size:1em;text-align:center;width:100%;}
+
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .feature-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:28px;box-shadow:0 2px 8px rgba(0,0,0,.05);transition:box-shadow .2s;}
+    .feature-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.1);}
+    .feature-icon{font-size:2.5em;margin-bottom:14px;}
+    .feature-card h3{font-size:1.1em;font-weight:700;margin:0 0 8px;color:#0f3d24;}
+    .feature-card p{color:#64748b;font-size:.95em;line-height:1.6;margin:0;}
+
+    .how-wrap{background:linear-gradient(135deg,#0f3d24,#1a5c38);padding:60px 40px;color:#fff;}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .step{text-align:center;padding:24px 16px;}
+    .step-num{width:56px;height:56px;border-radius:50%;background:#10b981;color:#fff;font-size:1.4em;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+    .step h3{font-size:1.05em;font-weight:700;margin:0 0 10px;color:#d1fae5;}
+    .step p{color:#94a3b8;font-size:.9em;line-height:1.6;margin:0;}
+
+    .states-row{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin:32px 0;}
+    .state-box{background:#fff;border:2px solid #e2e8f0;border-radius:8px;padding:10px 20px;font-weight:600;font-size:.9em;color:#64748b;}
+    .state-box.active{background:#1a5c38;border-color:#1a5c38;color:#fff;}
+    .state-arrow{color:#94a3b8;font-size:1.5em;padding:0 6px;}
+
+    .claim-states-row{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;margin:32px 0;}
+
+    .modules-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:0 auto;}
+    .module-card{background:#fff;border-left:4px solid #10b981;border-radius:0 8px 8px 0;padding:20px 24px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
+    .module-card h3{margin:0 0 6px;font-size:1.05em;color:#0f3d24;}
+    .module-card p{margin:0;color:#64748b;font-size:.9em;line-height:1.5;}
+
+    .compat-section{background:#fff;padding:60px 40px;}
+    .compat-grid{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;max-width:900px;margin:0 auto;}
+    .compat-badge{background:#0f3d24;color:#fff;border-radius:8px;padding:10px 22px;font-weight:700;font-size:1.05em;}
+    .compat-badge.current{background:#10b981;}
+
+    .support-wrap{background:linear-gradient(135deg,#0f3d24,#1a5c38);padding:60px 40px;color:#fff;}
+    .support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+    .support-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:32px 24px;text-align:center;}
+    .support-card h3{font-size:1.2em;font-weight:700;margin:0 0 12px;color:#a7f3d0;}
+    .support-card p{color:#94a3b8;font-size:.95em;line-height:1.6;margin:0 0 20px;}
+    .btn{display:inline-block;padding:10px 24px;border-radius:6px;font-weight:600;font-size:.95em;}
+    .btn-green{background:#10b981;color:#fff;}
+    .btn-green:hover{background:#059669;text-decoration:none;}
+    .btn-dark{background:#0f3d24;color:#fff;border:1px solid rgba(255,255,255,.3);}
+    .btn-dark:hover{background:#1a5c38;text-decoration:none;}
+
+    .footer{background:#0a1f13;color:#64748b;padding:32px 40px;text-align:center;}
+    .footer a{color:#34d399;}
+
+    @media(max-width:768px){
+        .gallery{grid-template-columns:1fr;}
+        .features-grid{grid-template-columns:1fr;}
+        .steps{grid-template-columns:1fr 1fr;}
+        .modules-grid{grid-template-columns:1fr;}
+        .support-grid{grid-template-columns:1fr;}
+        .hero h1{font-size:2em;}
+    }
+</style>
+
+<!-- HERO -->
+<div class="hero">
+    <div style="font-size:.9em;color:#34d399;margin-bottom:12px;letter-spacing:2px;text-transform:uppercase;">Odoo 19 | Insurance / Finance</div>
+    <img src="icon.png" alt="Insurance Management" style="width:80px;height:80px;border-radius:16px;margin-bottom:20px;box-shadow:0 4px 20px rgba(0,0,0,.3);"/>
+    <h1>Insurance Management</h1>
+    <p class="tagline">Complete insurance lifecycle — policies, claims, agent commissions, nominee management and professional PDF reports, all inside Odoo</p>
+    <div class="badges">
+        <span class="badge green">&#10003; Odoo Online</span>
+        <span class="badge green">&#10003; Odoo.sh</span>
+        <span class="badge green">&#10003; On-Premise</span>
+        <span class="badge">&#127956; Policy Management</span>
+        <span class="badge">&#9989; Claims Processing</span>
+        <span class="badge">&#128196; PDF Reports</span>
+        <span class="badge">&#128200; Agent Commissions</span>
+    </div>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery-wrap">
+    <div style="text-align:center;margin-bottom:32px;">
+        <h2 style="color:#fff;font-size:1.8em;margin:0 0 8px;">See It In Action</h2>
+        <p style="color:#a7f3d0;margin:0;">Real screenshots from a live Odoo 19 instance — click to enlarge</p>
+    </div>
+    <div class="gallery">
+        <div class="gallery-thumb" onclick="openLightbox('screenshot_01_policies_list.png','All Policies — List View')">
+            <img src="screenshot_01_policies_list.png" alt="Policies List"/>
+            <p>&#128203; All Policies — List View</p>
+        </div>
+        <div class="gallery-thumb" onclick="openLightbox('screenshot_02_policy_form.png','Policy Form — Full Details')">
+            <img src="screenshot_02_policy_form.png" alt="Policy Form"/>
+            <p>&#128196; Policy Form — Insured Details &amp; Status</p>
+        </div>
+        <div class="gallery-thumb" onclick="openLightbox('screenshot_03_claims_list.png','Claims — List View')">
+            <img src="screenshot_03_claims_list.png" alt="Claims List"/>
+            <p>&#9989; Claims Processing — List View</p>
+        </div>
+        <div class="gallery-thumb" onclick="openLightbox('screenshot_04_claim_form.png','Claim Form — Approval Workflow')">
+            <img src="screenshot_04_claim_form.png" alt="Claim Form"/>
+            <p>&#128214; Claim Form — Approval &amp; Settlement</p>
+        </div>
+    </div>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt=""/>
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<!-- POLICY WORKFLOW -->
+<div class="section">
+    <h2 class="section-title">Policy Lifecycle</h2>
+    <p class="section-sub">Full policy lifecycle from draft to expiry with role-based controls</p>
+    <div class="states-row">
+        <div class="state-box">Draft</div>
+        <div class="state-arrow">&#8594;</div>
+        <div class="state-box">Confirmed</div>
+        <div class="state-arrow">&#8594;</div>
+        <div class="state-box active">Running</div>
+        <div class="state-arrow">&#8594;</div>
+        <div class="state-box">Expired</div>
+    </div>
+    <p style="text-align:center;color:#64748b;max-width:700px;margin:0 auto;">
+        Create a policy in <strong>Draft</strong>, confirm it to lock the terms, generate a premium invoice,
+        mark it <strong>Running</strong> once payment is received, and track expiry automatically.
+        Expired policies can be renewed in one click with pre-filled policyholder details.
+    </p>
+</div>
+
+<!-- FEATURES -->
+<div style="background:#f1f5f9;padding:60px 40px;">
+    <div style="max-width:1100px;margin:0 auto;">
+        <h2 class="section-title">Key Features</h2>
+        <p class="section-sub">Everything your insurance operations team needs — out of the box</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">&#127956;</div>
+                <h3>Policy Management</h3>
+                <p>Create policies with categories, sub-categories, terms, premiums and duration. Supports lump-sum and monthly installment payments. Auto-generated references.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#9989;</div>
+                <h3>Claims Processing</h3>
+                <p>Full claims workflow: Draft → Submit → Approve. Upload supporting documents, record settlement amounts and generate settlement bills in one click.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128200;</div>
+                <h3>Agent &amp; Commission</h3>
+                <p>Manage agents with configurable commission rates. Track total commissions earned per agent. Generate commission bills directly from the agent record.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128101;</div>
+                <h3>Nominee Management</h3>
+                <p>Add multiple nominees per policy with relationship type and percentage allocation. Percentage validation ensures nominees always total 100%.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128196;</div>
+                <h3>PDF Reports</h3>
+                <p>Professional policy statements with full nominee table and terms &amp; conditions. Detailed claim reports with settlement breakdown. Printable from any record.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128214;</div>
+                <h3>Document Tracking</h3>
+                <p>Attach and track required documents per policy or claim. Each document has a verification status: Pending → Submitted → Verified.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#127775;</div>
+                <h3>Policy Categories</h3>
+                <p>Hierarchical categories and sub-categories. Pre-loaded with Life, Health, Auto, Property, Travel and more. Fully customisable.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128179;</div>
+                <h3>Invoice Integration</h3>
+                <p>Generate customer invoices for premiums and vendor bills for claim settlements directly from policies and claims. Links to Odoo Accounting.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128275;</div>
+                <h3>Role-Based Access</h3>
+                <p>Insurance User (create &amp; view) and Insurance Manager (approve, reject, settle) groups. Managers control claim approvals and policy cancellations.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="how-wrap">
+    <div style="text-align:center;margin-bottom:40px;">
+        <h2 style="color:#fff;font-size:1.8em;margin:0 0 8px;">How It Works</h2>
+        <p style="color:#a7f3d0;margin:0;">Four steps from policy creation to claim settlement</p>
+    </div>
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <h3>Create Policy</h3>
+            <p>Select category, term, agent and policyholder. Add insured person details and nominees. Set premium and payment type.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <h3>Confirm &amp; Invoice</h3>
+            <p>Confirm the policy to lock terms. Generate a premium invoice for the policyholder. Mark Running once payment is received.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <h3>Manage Claims</h3>
+            <p>Policyholder raises a claim with reason and documents. Submit for manager approval or rejection. Record settlement amount.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <h3>Settle &amp; Report</h3>
+            <p>Approve the claim and generate a settlement bill. Print PDF reports for audit. Renew the policy when it expires.</p>
+        </div>
+    </div>
+</div>
+
+<!-- CLAIMS WORKFLOW -->
+<div class="section">
+    <h2 class="section-title">Claims Workflow</h2>
+    <p class="section-sub">Structured approval process ensures every claim is reviewed and documented</p>
+    <div class="claim-states-row states-row">
+        <div class="state-box">Draft</div>
+        <div class="state-arrow">&#8594;</div>
+        <div class="state-box">Submitted</div>
+        <div class="state-arrow">&#8594;</div>
+        <div class="state-box">To Approve</div>
+        <div class="state-arrow">&#8594;</div>
+        <div class="state-box active" style="background:#1a5c38;">Approved</div>
+        <div class="state-arrow" style="color:#dc3545;"> / </div>
+        <div class="state-box" style="border-color:#dc3545;color:#dc3545;">Rejected</div>
+    </div>
+    <p style="text-align:center;color:#64748b;max-width:700px;margin:0 auto;">
+        Claims submitted by users go through a two-level review. The manager can approve or reject with a reason.
+        Approved claims generate a vendor settlement bill automatically.
+    </p>
+</div>
+
+<!-- MODULE AREAS -->
+<div style="background:#f1f5f9;padding:60px 40px;">
+    <div style="max-width:1100px;margin:0 auto;">
+        <h2 class="section-title">What's Included</h2>
+        <p class="section-sub">All modules and menus included — no extra apps needed</p>
+        <div class="modules-grid">
+            <div class="module-card">
+                <h3>&#127956; Policy Management</h3>
+                <p>Full CRUD for policies with lifecycle workflow, invoice generation, renewal, and chatter for internal communication.</p>
+            </div>
+            <div class="module-card" style="border-left-color:#2563eb;">
+                <h3>&#9989; Claims Management</h3>
+                <p>Claims with document upload, multi-level approval, rejection reason, settlement amount and settlement bill creation.</p>
+            </div>
+            <div class="module-card" style="border-left-color:#f59e0b;">
+                <h3>&#128200; Agent Management</h3>
+                <p>Agent records with commission rate, total commissions computed, linked policies list and commission billing.</p>
+            </div>
+            <div class="module-card" style="border-left-color:#8b5cf6;">
+                <h3>&#128179; Accounting Integration</h3>
+                <p>Premium invoices (customer invoice) and settlement bills (vendor bill) created directly from policies and claims.</p>
+            </div>
+            <div class="module-card" style="border-left-color:#ec4899;">
+                <h3>&#128101; Nominee Tracking</h3>
+                <p>Multiple nominees per policy with relationship and percentage. Validation ensures allocations always sum to 100%.</p>
+            </div>
+            <div class="module-card" style="border-left-color:#14b8a6;">
+                <h3>&#128196; PDF Reports</h3>
+                <p>Policy statement report and claim report — both with company letterhead, formatted tables and full data.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- COMPATIBILITY -->
+<div class="compat-section">
+    <h2 class="section-title">Compatibility</h2>
+    <p class="section-sub">Built for Odoo 19 — tested on all deployment options</p>
+    <div class="compat-grid">
+        <span class="compat-badge">Odoo 17</span>
+        <span class="compat-badge">Odoo 18</span>
+        <span class="compat-badge current">Odoo 19 &#10003;</span>
+    </div>
+    <p style="text-align:center;color:#64748b;margin:40px 0 12px;font-weight:600;">Dependencies</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <span style="background:#f1f5f9;border:2px solid #e2e8f0;color:#0f3d24;border-radius:8px;padding:10px 22px;font-weight:600;">base</span>
+        <span style="background:#f1f5f9;border:2px solid #e2e8f0;color:#0f3d24;border-radius:8px;padding:10px 22px;font-weight:600;">mail</span>
+        <span style="background:#f1f5f9;border:2px solid #e2e8f0;color:#0f3d24;border-radius:8px;padding:10px 22px;font-weight:600;">account</span>
+        <span style="background:#f1f5f9;border:2px solid #e2e8f0;color:#0f3d24;border-radius:8px;padding:10px 22px;font-weight:600;">hr</span>
+    </div>
+</div>
+
+<!-- SUPPORT -->
+<div class="support-wrap">
+    <div style="text-align:center;margin-bottom:40px;">
+        <h2 style="color:#fff;font-size:1.8em;margin:0 0 8px;">Support &amp; Services</h2>
+        <p style="color:#a7f3d0;margin:0;">We are here to help you go live quickly</p>
+    </div>
+    <div class="support-grid">
+        <div class="support-card">
+            <h3>&#127381; Free Demo</h3>
+            <p>Request a live demo on your Odoo instance. See real policies, claims and reports with demo data before you commit.</p>
+            <a href="mailto:abdzoro89@gmail.com?subject=Insurance Management Demo" class="btn btn-green">Request Demo</a>
+        </div>
+        <div class="support-card">
+            <h3>&#127863; 1-Year Support</h3>
+            <p>Purchase includes 1 year of priority email support, bug fixes and minor updates. Extended annual plans available.</p>
+            <a href="mailto:abdzoro89@gmail.com" class="btn btn-dark">Contact Support</a>
+        </div>
+        <div class="support-card">
+            <h3>&#9881; Customisation</h3>
+            <p>Need Islamic insurance (Takaful), multi-currency, re-insurance, broker portal or custom PDF layouts? We deliver it.</p>
+            <a href="mailto:abdzoro89@gmail.com?subject=Insurance Management Customisation" class="btn btn-green">Get a Quote</a>
+        </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;color:#64748b;font-size:.95em;">
+        <strong style="color:#a7f3d0;">Email:</strong>&#160;<a href="mailto:abdzoro89@gmail.com" style="color:#34d399;">abdzoro89@gmail.com</a>
+        &#160;&#160;|&#160;&#160;
+        <strong style="color:#a7f3d0;">Website:</strong>&#160;<a href="https://leapai.ai" style="color:#34d399;">leapai.ai</a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p style="margin:0 0 8px;font-size:1.1em;color:#e2e8f0;font-weight:600;">Insurance Management for Odoo 19</p>
+    <p style="margin:0 0 8px;">Built by <a href="https://leapai.ai">leapai.ai</a> &#160;|&#160; Maintainer: <a href="mailto:abdzoro89@gmail.com">abdzoro89@gmail.com</a></p>
+    <p style="margin:0;font-size:.85em;">Licensed under LGPL-3 &#160;|&#160; Version 19.0.1.0.0</p>
+</div>
+
+<script>
+function openLightbox(src,caption){
+    document.getElementById('lightbox-img').src=src;
+    document.getElementById('lightbox-caption').textContent=caption;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+    if(!e||e.target===document.getElementById('lightbox')||e.target.classList.contains('lightbox-close')){
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow='';
+    }
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox({target:document.getElementById('lightbox')});});
+</script>
+</body>
+</html>

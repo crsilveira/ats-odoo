@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Insurance Categories -->
+        <record id="category_life" model="insurance.category">
+            <field name="name">Life Insurance</field>
+            <field name="code">LIFE</field>
+            <field name="color">1</field>
+            <field name="description">Life insurance policies covering death benefits.</field>
+        </record>
+
+        <record id="category_health" model="insurance.category">
+            <field name="name">Health Insurance</field>
+            <field name="code">HEALTH</field>
+            <field name="color">2</field>
+            <field name="description">Health insurance policies covering medical expenses.</field>
+        </record>
+
+        <record id="category_auto" model="insurance.category">
+            <field name="name">Auto Insurance</field>
+            <field name="code">AUTO</field>
+            <field name="color">3</field>
+            <field name="description">Vehicle insurance policies.</field>
+        </record>
+
+        <!-- Sub-categories -->
+        <record id="subcategory_term_life" model="insurance.category">
+            <field name="name">Term Life</field>
+            <field name="code">TERM-LIFE</field>
+            <field name="parent_id" ref="category_life"/>
+            <field name="description">Term life insurance for a fixed period.</field>
+        </record>
+
+        <record id="subcategory_comprehensive_health" model="insurance.category">
+            <field name="name">Comprehensive Health</field>
+            <field name="code">COMP-HEALTH</field>
+            <field name="parent_id" ref="category_health"/>
+            <field name="description">Comprehensive health coverage plan.</field>
+        </record>
+
+        <record id="subcategory_third_party_auto" model="insurance.category">
+            <field name="name">Third Party Auto</field>
+            <field name="code">TP-AUTO</field>
+            <field name="parent_id" ref="category_auto"/>
+            <field name="description">Third party liability auto insurance.</field>
+        </record>
+
+        <!-- Insurance Terms -->
+        <record id="term_1year" model="insurance.term">
+            <field name="name">1 Year</field>
+            <field name="duration_months">12</field>
+            <field name="premium_amount">5000</field>
+            <field name="currency_id" ref="base.USD"/>
+        </record>
+
+        <record id="term_6months" model="insurance.term">
+            <field name="name">6 Months</field>
+            <field name="duration_months">6</field>
+            <field name="premium_amount">2500</field>
+            <field name="currency_id" ref="base.USD"/>
+        </record>
+
+        <record id="term_2years" model="insurance.term">
+            <field name="name">2 Years</field>
+            <field name="duration_months">24</field>
+            <field name="premium_amount">9000</field>
+            <field name="currency_id" ref="base.USD"/>
+        </record>
+
+        <!-- Demo Partners for Agents -->
+        <record id="partner_john_smith" model="res.partner">
+            <field name="name">John Smith</field>
+            <field name="email">john.smith@insurance.example.com</field>
+            <field name="phone">+1-555-0101</field>
+        </record>
+
+        <record id="partner_sarah_ahmed" model="res.partner">
+            <field name="name">Sarah Ahmed</field>
+            <field name="email">sarah.ahmed@insurance.example.com</field>
+            <field name="phone">+1-555-0102</field>
+        </record>
+
+        <!-- Insurance Agents -->
+        <record id="agent_john_smith" model="insurance.agent">
+            <field name="name">John Smith</field>
+            <field name="code">AGT-001</field>
+            <field name="partner_id" ref="partner_john_smith"/>
+            <field name="email">john.smith@insurance.example.com</field>
+            <field name="phone">+1-555-0101</field>
+            <field name="commission_rate">5.0</field>
+        </record>
+
+        <record id="agent_sarah_ahmed" model="insurance.agent">
+            <field name="name">Sarah Ahmed</field>
+            <field name="code">AGT-002</field>
+            <field name="partner_id" ref="partner_sarah_ahmed"/>
+            <field name="email">sarah.ahmed@insurance.example.com</field>
+            <field name="phone">+1-555-0102</field>
+            <field name="commission_rate">4.5</field>
+        </record>
+
+        <!-- Demo Policyholders -->
+        <record id="partner_policyholder_1" model="res.partner">
+            <field name="name">Alice Johnson</field>
+            <field name="email">alice.johnson@example.com</field>
+            <field name="phone">+1-555-0201</field>
+        </record>
+
+        <record id="partner_policyholder_2" model="res.partner">
+            <field name="name">Bob Williams</field>
+            <field name="email">bob.williams@example.com</field>
+            <field name="phone">+1-555-0202</field>
+        </record>
+
+        <record id="partner_policyholder_3" model="res.partner">
+            <field name="name">Carol Brown</field>
+            <field name="email">carol.brown@example.com</field>
+            <field name="phone">+1-555-0203</field>
+        </record>
+
+        <!-- Insurance Policies -->
+        <record id="policy_001" model="insurance.policy">
+            <field name="name">POL001 - Life Insurance</field>
+            <field name="reference">INS/2025/01/0001</field>
+            <field name="category_id" ref="category_life"/>
+            <field name="sub_category_id" ref="subcategory_term_life"/>
+            <field name="policy_term_id" ref="term_1year"/>
+            <field name="partner_id" ref="partner_policyholder_1"/>
+            <field name="agent_id" ref="agent_john_smith"/>
+            <field name="premium_amount">5000</field>
+            <field name="payment_type">fixed</field>
+            <field name="issue_date">2025-01-01</field>
+            <field name="expiry_date">2025-12-31</field>
+            <field name="duration">12</field>
+            <field name="insured_name">Alice Johnson</field>
+            <field name="insured_gender">female</field>
+            <field name="insured_phone">+1-555-0201</field>
+            <field name="insured_email">alice.johnson@example.com</field>
+            <field name="state">running</field>
+        </record>
+
+        <record id="policy_002" model="insurance.policy">
+            <field name="name">POL002 - Health Insurance</field>
+            <field name="reference">INS/2025/01/0002</field>
+            <field name="category_id" ref="category_health"/>
+            <field name="sub_category_id" ref="subcategory_comprehensive_health"/>
+            <field name="policy_term_id" ref="term_1year"/>
+            <field name="partner_id" ref="partner_policyholder_2"/>
+            <field name="agent_id" ref="agent_sarah_ahmed"/>
+            <field name="premium_amount">5000</field>
+            <field name="payment_type">fixed</field>
+            <field name="issue_date">2025-01-01</field>
+            <field name="expiry_date">2025-12-31</field>
+            <field name="duration">12</field>
+            <field name="insured_name">Bob Williams</field>
+            <field name="insured_gender">male</field>
+            <field name="insured_phone">+1-555-0202</field>
+            <field name="insured_email">bob.williams@example.com</field>
+            <field name="state">running</field>
+        </record>
+
+        <record id="policy_003" model="insurance.policy">
+            <field name="name">POL003 - Auto Insurance</field>
+            <field name="reference">INS/2025/01/0003</field>
+            <field name="category_id" ref="category_auto"/>
+            <field name="sub_category_id" ref="subcategory_third_party_auto"/>
+            <field name="policy_term_id" ref="term_6months"/>
+            <field name="partner_id" ref="partner_policyholder_3"/>
+            <field name="agent_id" ref="agent_john_smith"/>
+            <field name="premium_amount">2500</field>
+            <field name="payment_type">fixed</field>
+            <field name="issue_date">2025-01-01</field>
+            <field name="expiry_date">2025-06-30</field>
+            <field name="duration">6</field>
+            <field name="insured_name">Carol Brown</field>
+            <field name="insured_gender">female</field>
+            <field name="insured_phone">+1-555-0203</field>
+            <field name="insured_email">carol.brown@example.com</field>
+            <field name="state">running</field>
+        </record>
+
+        <!-- Insurance Claims -->
+        <record id="claim_001" model="insurance.claim">
+            <field name="name">CLM - Accident Claim</field>
+            <field name="reference">CLM/2025/02/0001</field>
+            <field name="policy_id" ref="policy_001"/>
+            <field name="claim_date">2025-02-15</field>
+            <field name="claim_amount">1500</field>
+            <field name="reason">accident</field>
+            <field name="reason_detail">Vehicle accident resulting in property damage.</field>
+            <field name="settlement_amount">1200</field>
+            <field name="state">approved</field>
+        </record>
+
+        <record id="claim_002" model="insurance.claim">
+            <field name="name">CLM - Medical Emergency</field>
+            <field name="reference">CLM/2025/03/0001</field>
+            <field name="policy_id" ref="policy_002"/>
+            <field name="claim_date">2025-03-10</field>
+            <field name="claim_amount">3000</field>
+            <field name="reason">medical</field>
+            <field name="reason_detail">Emergency hospitalization due to illness.</field>
+            <field name="state">submitted</field>
+        </record>
+    </data>
+</odoo>

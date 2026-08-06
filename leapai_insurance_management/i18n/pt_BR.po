@@ -1,0 +1,1258 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* leapai_insurance_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-31 16:35+0000\n"
+"PO-Revision-Date: 2026-07-31 16:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_kanban
+msgid "<span>Category: </span>"
+msgstr "<span>Categoria: </span>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_kanban
+msgid "<span>Expiry: </span>"
+msgstr "<span>Vencimento: </span>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_kanban
+msgid "<span>Policyholder: </span>"
+msgstr "<span>Segurado: </span>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_kanban
+msgid "<span>Premium: </span>"
+msgstr "<span>Prêmio: </span>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_policy_template
+msgid "<strong>Agent:</strong>"
+msgstr "<strong>Agente:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_policy_template
+msgid "<strong>Category:</strong>"
+msgstr "<strong>Categoria:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_claim_template
+msgid "<strong>Claim Amount:</strong>"
+msgstr "<strong>Valor do Sinistro:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_claim_template
+msgid "<strong>Claim Date:</strong>"
+msgstr "<strong>Data do Sinistro:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_claim_template
+msgid "<strong>Claim Name:</strong>"
+msgstr "<strong>Nome do Sinistro:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_claim_template
+msgid "<strong>Claimant:</strong>"
+msgstr "<strong>Reclamante:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_policy_template
+msgid "<strong>Payment Type:</strong>"
+msgstr "<strong>Tipo de Pagamento:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_policy_template
+msgid "<strong>Policy Name:</strong>"
+msgstr "<strong>Nome da Apólice:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_claim_template
+msgid "<strong>Policy Ref:</strong>"
+msgstr "<strong>Ref. da Apólice:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_claim_template
+msgid "<strong>Policy:</strong>"
+msgstr "<strong>Apólice:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_policy_template
+msgid "<strong>Policyholder:</strong>"
+msgstr "<strong>Segurado:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_policy_template
+msgid "<strong>Premium Amount:</strong>"
+msgstr "<strong>Valor do Prêmio:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_claim_template
+msgid "<strong>Reason:</strong>"
+msgstr "<strong>Motivo:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_claim_template
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_policy_template
+msgid "<strong>Reference:</strong>"
+msgstr "<strong>Referência:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_claim_template
+msgid "<strong>Settlement Amount:</strong>"
+msgstr "<strong>Valor da Indenização:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_claim_template
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_policy_template
+msgid "<strong>Status:</strong>"
+msgstr "<strong>Situação:</strong>"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_policy_template
+msgid "<strong>Sub-category:</strong>"
+msgstr "<strong>Subcategoria:</strong>"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__reason__accident
+msgid "Accident"
+msgstr "Acidente"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__message_needaction
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__message_needaction
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__message_needaction
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__message_needaction
+msgid "Action Needed"
+msgstr "Ação Necessária"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__active
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__active
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_term__active
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_agent_search
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_search
+msgid "Active"
+msgstr "Ativo"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__activity_ids
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__activity_ids
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__activity_ids
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__activity_ids
+msgid "Activities"
+msgstr "Atividades"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__activity_exception_decoration
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__activity_exception_decoration
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__activity_exception_decoration
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Descrição de exceção de Atividade"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__activity_state
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__activity_state
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__activity_state
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__activity_state
+msgid "Activity State"
+msgstr "Status da Atividade"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__activity_type_icon
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__activity_type_icon
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__activity_type_icon
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícone do Tipo de Atividade"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_nominee__age
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.report_insurance_policy_template
+msgid "Age"
+msgstr "Idade"
+
+#. module: leapai_insurance_management
+#: model:ir.model,description:leapai_insurance_management.model_insurance_policy
+msgid "Insurance Policy"
+msgstr "Apólice de Seguro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__name
+msgid "Policy Name"
+msgstr "Nome da Apólice"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__reference
+msgid "Reference"
+msgstr "Referência"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__category_id
+msgid "Category"
+msgstr "Categoria"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__sub_category_id
+msgid "Sub-category"
+msgstr "Subcategoria"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__policy_term_id
+msgid "Policy Term"
+msgstr "Vigência da Apólice"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__partner_id
+msgid "Policyholder"
+msgstr "Segurado"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__agent_id
+msgid "Agent"
+msgstr "Agente"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__currency_id
+msgid "Currency"
+msgstr "Moeda"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__premium_amount
+msgid "Premium Amount"
+msgstr "Valor do Prêmio"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__payment_type
+msgid "Payment Type"
+msgstr "Tipo de Pagamento"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_policy__payment_type__fixed
+msgid "Lump Sum"
+msgstr "Parcela Única"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_policy__payment_type__installment
+msgid "Monthly Installments"
+msgstr "Parcelas Mensais"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__issue_date
+msgid "Issue Date"
+msgstr "Data de Emissão"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__expiry_date
+msgid "Expiry Date"
+msgstr "Data de Vencimento"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__duration
+msgid "Duration (Months)"
+msgstr "Duração (Meses)"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__insured_name
+msgid "Insured Person Name"
+msgstr "Nome do Segurado"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__insured_dob
+msgid "Date of Birth"
+msgstr "Data de Nascimento"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__insured_gender
+msgid "Gender"
+msgstr "Gênero"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_policy__insured_gender__male
+msgid "Male"
+msgstr "Masculino"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_policy__insured_gender__female
+msgid "Female"
+msgstr "Feminino"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_policy__insured_gender__other
+msgid "Other"
+msgstr "Outro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__insured_phone
+msgid "Phone"
+msgstr "Telefone"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__insured_email
+msgid "Email"
+msgstr "E-mail"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__nominee_ids
+msgid "Nominees"
+msgstr "Beneficiários"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__document_ids
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__claim_ids
+msgid "Insurance Claims"
+msgstr "Sinistros de Seguro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__claim_count
+msgid "Claims Count"
+msgstr "Contagem de Sinistros"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__invoice_count
+msgid "Invoices"
+msgstr "Faturas"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__state
+msgid "Status"
+msgstr "Situação"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_policy__state__draft
+msgid "Draft"
+msgstr "Provisório"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_policy__state__confirmed
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_policy__state__running
+msgid "Running"
+msgstr "Em Vigor"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_policy__state__expired
+msgid "Expired"
+msgstr "Expirado"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_policy__state__cancelled
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__description
+msgid "Description"
+msgstr "Descrição"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__terms_conditions
+msgid "Terms & Conditions"
+msgstr "Termos & Condições"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_policy__note
+msgid "Internal Notes"
+msgstr "Notas Internas"
+
+#. module: leapai_insurance_management
+#: model:ir.model,営業_description:leapai_insurance_management.model_account_move
+msgid "Journal Entry"
+msgstr "Lançamento Contábil"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_account_move__insurance_policy_id
+msgid "Insurance Policy"
+msgstr "Apólice de Seguro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_account_move__insurance_claim_id
+msgid "Insurance Claim"
+msgstr "Sinistro de Seguro"
+
+#. module: leapai_insurance_management
+#: model:ir.model,description:leapai_insurance_management.model_insurance_agent
+msgid "Insurance Agent"
+msgstr "Agente de Seguros"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__name
+msgid "Agent Name"
+msgstr "Nome do Agente"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__code
+msgid "Agent Code"
+msgstr "Código do Agente"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__partner_id
+msgid "Contact"
+msgstr "Contato"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__email
+msgid "Email"
+msgstr "E-mail"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__phone
+msgid "Phone"
+msgstr "Telefone"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__commission_rate
+msgid "Commission Rate (%)"
+msgstr "Taxa de Comissão (%)"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__currency_id
+msgid "Currency"
+msgstr "Moeda"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__policy_count
+msgid "Policies"
+msgstr "Apólices"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__commission_total
+msgid "Total Commission"
+msgstr "Comissão Total"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__active
+msgid "Active"
+msgstr "Ativo"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_agent__note
+msgid "Notes"
+msgstr "Notas"
+
+#. module: leapai_insurance_management
+#: model:ir.model,description:leapai_insurance_management.model_insurance_category
+msgid "Insurance Category"
+msgstr "Categoria de Seguro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__name
+msgid "Category Name"
+msgstr "Nome da Categoria"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__code
+msgid "Code"
+msgstr "Código"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__parent_id
+msgid "Parent Category"
+msgstr "Categoria Pai"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__child_ids
+msgid "Sub-categories"
+msgstr "Subcategorias"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__policy_count
+msgid "Policies"
+msgstr "Apólices"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__color
+msgid "Color Index"
+msgstr "Índice de Cores"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__active
+msgid "Active"
+msgstr "Ativo"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__description
+msgid "Description"
+msgstr "Descrição"
+
+#. module: leapai_insurance_management
+#: model:ir.model,description:leapai_insurance_management.model_insurance_claim
+msgid "Insurance Claim"
+msgstr "Sinistro de Seguro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__name
+msgid "Claim Name"
+msgstr "Nome do Sinistro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__reference
+msgid "Reference"
+msgstr "Referência"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__policy_id
+msgid "Policy"
+msgstr "Apólice"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__partner_id
+msgid "Policyholder"
+msgstr "Segurado"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__claim_date
+msgid "Claim Date"
+msgstr "Data do Sinistro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__claim_amount
+msgid "Claim Amount"
+msgstr "Valor do Sinistro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__currency_id
+msgid "Currency"
+msgstr "Moeda"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__reason
+msgid "Claim Reason"
+msgstr "Motivo do Sinistro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__reason__accident
+msgid "Accident"
+msgstr "Acidente"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__reason__theft
+msgid "Theft"
+msgstr "Roubo/Furto"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__reason__fire
+msgid "Fire"
+msgstr "Incêndio"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__reason__medical
+msgid "Medical Emergency"
+msgstr "Emergência Médica"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__reason__natural_disaster
+msgid "Natural Disaster"
+msgstr "Desastre Natural"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__reason__other
+msgid "Other"
+msgstr "Outro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__reason_detail
+msgid "Reason Details"
+msgstr "Detalhes do Motivo"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__document_ids
+msgid "Supporting Documents"
+msgstr "Documentos Comprobatórios"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__invoice_count
+msgid "Settlements"
+msgstr "Indenizações"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__state
+msgid "Status"
+msgstr "Situação"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__state__draft
+msgid "Draft"
+msgstr "Provisório"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__state__submitted
+msgid "Submitted"
+msgstr "Enviado"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__state__to_approve
+msgid "Pending Approval"
+msgstr "Aprovação Pendente"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__state__approved
+msgid "Approved"
+msgstr "Aprovado"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_claim__state__rejected
+msgid "Rejected"
+msgstr "Rejeitado"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__rejection_reason
+msgid "Rejection Reason"
+msgstr "Motivo da Rejeição"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__settlement_amount
+msgid "Settlement Amount"
+msgstr "Valor da Indenização"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__note
+msgid "Internal Notes"
+msgstr "Notas Internas"
+
+#. module: leapai_insurance_management
+#: model:ir.model,description:leapai_insurance_management.model_insurance_document
+msgid "Insurance Policy Document"
+msgstr "Documento da Apólice de Seguro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_document__policy_id
+msgid "Policy"
+msgstr "Apólice"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_document__name
+msgid "Document Name"
+msgstr "Nome do Documento"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_document__document_type
+msgid "Document Type"
+msgstr "Tipo de Documento"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_document__document_type__id
+msgid "ID/Passport"
+msgstr "RG/Passaporte"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_document__document_type__medical
+msgid "Medical Report"
+msgstr "Laudo Médico"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_document__document_type__income
+msgid "Income Proof"
+msgstr "Comprovante de Renda"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_document__document_type__other
+msgid "Other"
+msgstr "Outro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_document__attachment_id
+msgid "Attachment"
+msgstr "Anexo"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_document__state
+msgid "Status"
+msgstr "Situação"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_document__state__pending
+msgid "Pending"
+msgstr "Pendente"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_document__state__submitted
+msgid "Submitted"
+msgstr "Enviado"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_document__state__verified
+msgid "Verified"
+msgstr "Verificado"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_document__note
+msgid "Notes"
+msgstr "Notas"
+
+#. module: leapai_insurance_management
+#: model:ir.model,description:leapai_insurance_management.model_insurance_nominee
+msgid "Insurance Policy Nominee"
+msgstr "Beneficiário da Apólice de Seguro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_nominee__policy_id
+msgid "Policy"
+msgstr "Apólice"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_nominee__name
+msgid "Nominee Name"
+msgstr "Nome do Beneficiário"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_nominee__age
+msgid "Age"
+msgstr "Idade"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_nominee__relationship
+msgid "Relationship"
+msgstr "Grau de Parentesco"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_nominee__relationship__spouse
+msgid "Spouse"
+msgstr "Cônjuge"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_nominee__relationship__child
+msgid "Child"
+msgstr "Filho(a)"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_nominee__relationship__parent
+msgid "Parent"
+msgstr "Pai/Mãe"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_nominee__relationship__sibling
+msgid "Sibling"
+msgstr "Irmão/Irmã"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields.selection,name:leapai_insurance_management.selection__insurance_nominee__relationship__other
+msgid "Other"
+msgstr "Outro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_nominee__percentage
+msgid "Benefit Percentage (%)"
+msgstr "Percentual do Benefício (%)"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_nominee__phone
+msgid "Phone"
+msgstr "Telefone"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_nominee__email
+msgid "Email"
+msgstr "E-mail"
+
+#. module: leapai_insurance_management
+#: model:ir.model,description:leapai_insurance_management.model_insurance_term
+msgid "Insurance Policy Term"
+msgstr "Vigência da Apólice de Seguro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_term__name
+msgid "Term Name"
+msgstr "Nome do Termo"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_term__duration_months
+msgid "Duration (Months)"
+msgstr "Duração (Meses)"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_term__premium_amount
+msgid "Premium Amount"
+msgstr "Valor do Prêmio"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_term__currency_id
+msgid "Currency"
+msgstr "Moeda"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_term__active
+msgid "Active"
+msgstr "Ativo"
+
+#. module: leapai_insurance_management
+#: model:ir.model,description:leapai_insurance_management.model_res_partner
+msgid "Contact"
+msgstr "Contato"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_res_partner__is_insurance_customer
+msgid "Insurance Customer"
+msgstr "Cliente de Seguro"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_res_partner__insurance_policy_count
+msgid "Policies"
+msgstr "Apólices"
+
+#. module: leapai_insurance_management
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_res_partner__insurance_claim_count
+msgid "Claims"
+msgstr "Sinistros"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_root
+msgid "Insurance"
+msgstr "Seguros"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_dashboard
+msgid "Dashboard"
+msgstr "Painel"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_policies
+msgid "Policies"
+msgstr "Apólices"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_all_policies
+msgid "All Policies"
+msgstr "Todas as Apólices"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_my_policies
+msgid "My Policies"
+msgstr "Minhas Apólices"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_claims
+msgid "Claims"
+msgstr "Sinistros"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_all_claims
+msgid "All Claims"
+msgstr "Todos os Sinistros"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_my_claims
+msgid "My Claims"
+msgstr "Meus Sinistros"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_agents
+msgid "Agents"
+msgstr "Agentes"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_customers
+msgid "Customers"
+msgstr "Clientes"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_configuration
+msgid "Configuration"
+msgstr "Configuração"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_categories
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_subcategories
+msgid "Sub-categories"
+msgstr "Subcategorias"
+
+#. module: leapai_insurance_management
+#: model:ir.ui.menu,name:leapai_insurance_management.menu_insurance_terms
+msgid "Policy Terms"
+msgstr "Vigências das Apólices"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_agent_list
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_agent_search
+msgid "Insurance Agents"
+msgstr "Agentes de Seguros"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_agent_form
+msgid "Insurance Agent"
+msgstr "Agente de Seguros"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_agent_form
+msgid "Policies"
+msgstr "Apólices"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_agent_form
+msgid "Agent Information"
+msgstr "Informações do Agente"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_agent_form
+msgid "Commission"
+msgstr "Comissão"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_agent_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_agent_search
+msgid "Active"
+msgstr "Ativo"
+
+#. module: leapai_insurance_management
+#: model:ir.actions.act_window,name:leapai_insurance_management.action_insurance_agent
+msgid "Agents"
+msgstr "Agentes"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_list
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_search
+msgid "Insurance Categories"
+msgstr "Categorias de Seguro"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_form
+msgid "Insurance Category"
+msgstr "Categoria de Seguro"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_form
+msgid "Policies"
+msgstr "Apólices"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_form
+msgid "Description"
+msgstr "Descrição"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_form
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_search
+#: model:ir.actions.act_window,name:leapai_insurance_management.action_insurance_subcategory
+msgid "Sub-categories"
+msgstr "Subcategorias"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_search
+msgid "Name"
+msgstr "Nome"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_search
+msgid "Code"
+msgstr "Código"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_search
+msgid "Active"
+msgstr "Ativo"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_search
+msgid "Top-level"
+msgstr "Nível Superior"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_category_search
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_category__parent_id
+msgid "Parent Category"
+msgstr "Categoria Pai"
+
+#. module: leapai_insurance_management
+#: model:ir.actions.act_window,name:leapai_insurance_management.action_insurance_category
+msgid "Categories"
+msgstr "Categorias"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Submit"
+msgstr "Enviar"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Send for Approval"
+msgstr "Enviar para Aprovação"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Approve"
+msgstr "Aprovar"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Reject"
+msgstr "Rejeitar"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Reset to Draft"
+msgstr "Voltar para Provisório"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Create Settlement Bill"
+msgstr "Criar Fatura de Indenização"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Settlements"
+msgstr "Indenizações"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Claim Information"
+msgstr "Informações do Sinistro"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Claim Details"
+msgstr "Detalhes do Sinistro"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Reason Details"
+msgstr "Detalhes do Motivo"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Rejection Reason"
+msgstr "Motivo da Rejeição"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Supporting Documents"
+msgstr "Documentos Comprobatórios"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_form
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_list
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_search
+msgid "Insurance Claim"
+msgstr "Sinistro de Seguro"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_list
+msgid "Insurance Claims"
+msgstr "Sinistros de Seguro"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_search
+msgid "Draft"
+msgstr "Provisório"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_search
+msgid "Submitted"
+msgstr "Enviado"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_search
+msgid "Pending Approval"
+msgstr "Aprovação Pendente"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_search
+msgid "Approved"
+msgstr "Aprovado"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_search
+msgid "Rejected"
+msgstr "Rejeitado"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_search
+#: model:ir.model.fields,field_description:leapai_insurance_management.field_insurance_claim__policy_id
+msgid "Policy"
+msgstr "Apólice"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_search
+msgid "Reason"
+msgstr "Motivo"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_search
+msgid "Status"
+msgstr "Situação"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_claim_search
+msgid "Claim Date"
+msgstr "Data do Sinistro"
+
+#. module: leapai_insurance_management
+#: model:ir.actions.act_window,name:leapai_insurance_management.action_insurance_claim
+msgid "All Claims"
+msgstr "Todos os Sinistros"
+
+#. module: leapai_insurance_management
+#: model:ir.actions.act_window,name:leapai_insurance_management.action_insurance_my_claim
+msgid "My Claims"
+msgstr "Meus Sinistros"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_term_list
+#: model:ir.actions.act_window,name:leapai_insurance_management.action_insurance_term
+msgid "Policy Terms"
+msgstr "Vigências das Apólices"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_term_form
+msgid "Policy Term"
+msgstr "Vigência da Apólice"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_partner_form_insurance
+msgid "Policies"
+msgstr "Apólices"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_partner_form_insurance
+msgid "Claims"
+msgstr "Sinistros"
+
+#. module: leapai_insurance_management
+#: model:ir.actions.act_window,name:leapai_insurance_management.action_insurance_customers
+msgid "Insurance Customers"
+msgstr "Clientes de Seguro"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Set Running"
+msgstr "Colocar em Vigor"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Mark Expired"
+msgstr "Marcar como Expirado"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Renew Policy"
+msgstr "Renovar Apólice"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Create Invoice"
+msgstr "Criar Fatura"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Claims"
+msgstr "Sinistros"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Invoices"
+msgstr "Faturas"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Policy Information"
+msgstr "Informações da Apólice"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Parties"
+msgstr "Partes Envolvidas"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Policy Period"
+msgstr "Vigência da Apólice"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Insured Person"
+msgstr "Pessoa Segurada"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Nominees"
+msgstr "Beneficiários"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Description"
+msgstr "Descrição"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Terms & Conditions"
+msgstr "Termos & Condições"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_form
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_list
+msgid "Insurance Policy"
+msgstr "Apólice de Seguro"
+
+#. module: leapai_insurance_management
+#: model_terms:ir.ui.view,arch_db:leapai_insurance_management.view_insurance_policy_list
+msgid "Insurance Policies"
+msgstr "Apólices de Seguro"
+
+#. module: leapai_insurance_management
+#: model:ir.actions.act_window,name:leapai_insurance_management.action_insurance_policy
+msgid "All Policies"
+msgstr "Todas as Apólices"
+
+#. module: leapai_insurance_management
+#: model:ir.actions.act_window,name:leapai_insurance_management.action_insurance_policy_kanban
+msgid "Insurance Dashboard"
+msgstr "Painel de Seguros"
+
+#. module: leapai_insurance_management
+#: model:ir.actions.act_window,name:leapai_insurance_management.action_insurance_my_policy
+msgid "My Policies"
+msgstr "Minhas Apólices"

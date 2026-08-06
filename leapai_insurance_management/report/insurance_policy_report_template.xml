@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_insurance_policy_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2 class="text-center">Insurance Policy</h2>
+                            <hr/>
+
+                            <!-- Policy Details -->
+                            <div class="row mt-4">
+                                <div class="col-6">
+                                    <table class="table table-sm table-borderless">
+                                        <tr>
+                                            <td><strong>Policy Name:</strong></td>
+                                            <td><t t-esc="o.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Reference:</strong></td>
+                                            <td><t t-esc="o.reference or '-'"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Category:</strong></td>
+                                            <td><t t-esc="o.category_id.name"/></td>
+                                        </tr>
+                                        <tr t-if="o.sub_category_id">
+                                            <td><strong>Sub-category:</strong></td>
+                                            <td><t t-esc="o.sub_category_id.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Status:</strong></td>
+                                            <td><t t-esc="dict(o._fields['state'].selection).get(o.state)"/></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-6">
+                                    <table class="table table-sm table-borderless">
+                                        <tr>
+                                            <td><strong>Policyholder:</strong></td>
+                                            <td><t t-esc="o.partner_id.name"/></td>
+                                        </tr>
+                                        <tr t-if="o.agent_id">
+                                            <td><strong>Agent:</strong></td>
+                                            <td><t t-esc="o.agent_id.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Premium Amount:</strong></td>
+                                            <td>
+                                                <t t-esc="o.currency_id.symbol"/>
+                                                <t t-esc="'{:,.2f}'.format(o.premium_amount)"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Payment Type:</strong></td>
+                                            <td><t t-esc="dict(o._fields['payment_type'].selection).get(o.payment_type)"/></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Policy Period -->
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <table class="table table-sm table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Issue Date</th>
+                                                <th>Expiry Date</th>
+                                                <th>Duration (Months)</th>
+                                                <th>Term</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><t t-esc="o.issue_date"/></td>
+                                                <td><t t-esc="o.expiry_date or '-'"/></td>
+                                                <td><t t-esc="o.duration"/></td>
+                                                <td><t t-esc="o.policy_term_id.name or '-'"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Insured Person -->
+                            <div class="row mt-3" t-if="o.insured_name">
+                                <div class="col-12">
+                                    <h4>Insured Person</h4>
+                                    <table class="table table-sm table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Date of Birth</th>
+                                                <th>Gender</th>
+                                                <th>Phone</th>
+                                                <th>Email</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><t t-esc="o.insured_name"/></td>
+                                                <td><t t-esc="o.insured_dob or '-'"/></td>
+                                                <td><t t-esc="dict(o._fields['insured_gender'].selection).get(o.insured_gender) or '-'"/></td>
+                                                <td><t t-esc="o.insured_phone or '-'"/></td>
+                                                <td><t t-esc="o.insured_email or '-'"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Nominees -->
+                            <div class="row mt-3" t-if="o.nominee_ids">
+                                <div class="col-12">
+                                    <h4>Nominees</h4>
+                                    <table class="table table-sm table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Name</th>
+                                                <th>Relationship</th>
+                                                <th>Age</th>
+                                                <th>Benefit %</th>
+                                                <th>Phone</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="o.nominee_ids" t-as="nom">
+                                                <tr>
+                                                    <td><t t-esc="nom_index + 1"/></td>
+                                                    <td><t t-esc="nom.name"/></td>
+                                                    <td><t t-esc="dict(nom._fields['relationship'].selection).get(nom.relationship)"/></td>
+                                                    <td><t t-esc="nom.age or '-'"/></td>
+                                                    <td><t t-esc="'{:.2f}%'.format(nom.percentage)"/></td>
+                                                    <td><t t-esc="nom.phone or '-'"/></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="row mt-3" t-if="o.terms_conditions">
+                                <div class="col-12">
+                                    <h4>Terms &amp; Conditions</h4>
+                                    <div t-raw="o.terms_conditions"/>
+                                </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="row mt-5">
+                                <div class="col-6 text-center">
+                                    <p>____________________________</p>
+                                    <p>Authorized Signature</p>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <p>____________________________</p>
+                                    <p>Policyholder Signature</p>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

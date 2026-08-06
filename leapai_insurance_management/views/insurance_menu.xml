@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Top-level Menu -->
+        <menuitem
+            id="menu_insurance_root"
+            name="Insurance"
+            sequence="100"
+            web_icon="leapai_insurance_management,static/description/icon.png"
+            groups="leapai_insurance_management.group_insurance_user,leapai_insurance_management.group_insurance_manager"/>
+
+        <!-- Dashboard -->
+        <menuitem
+            id="menu_insurance_dashboard"
+            name="Dashboard"
+            parent="menu_insurance_root"
+            action="action_insurance_policy_kanban"
+            sequence="10"
+            groups="leapai_insurance_management.group_insurance_user,leapai_insurance_management.group_insurance_manager"/>
+
+        <!-- Policies -->
+        <menuitem
+            id="menu_insurance_policies"
+            name="Policies"
+            parent="menu_insurance_root"
+            sequence="20"
+            groups="leapai_insurance_management.group_insurance_user,leapai_insurance_management.group_insurance_manager"/>
+
+        <menuitem
+            id="menu_insurance_all_policies"
+            name="All Policies"
+            parent="menu_insurance_policies"
+            action="action_insurance_policy"
+            sequence="21"
+            groups="leapai_insurance_management.group_insurance_user,leapai_insurance_management.group_insurance_manager"/>
+
+        <menuitem
+            id="menu_insurance_my_policies"
+            name="My Policies"
+            parent="menu_insurance_policies"
+            action="action_insurance_my_policy"
+            sequence="22"
+            groups="leapai_insurance_management.group_insurance_user,leapai_insurance_management.group_insurance_manager"/>
+
+        <!-- Claims -->
+        <menuitem
+            id="menu_insurance_claims"
+            name="Claims"
+            parent="menu_insurance_root"
+            sequence="30"
+            groups="leapai_insurance_management.group_insurance_user,leapai_insurance_management.group_insurance_manager"/>
+
+        <menuitem
+            id="menu_insurance_all_claims"
+            name="All Claims"
+            parent="menu_insurance_claims"
+            action="action_insurance_claim"
+            sequence="31"
+            groups="leapai_insurance_management.group_insurance_user,leapai_insurance_management.group_insurance_manager"/>
+
+        <menuitem
+            id="menu_insurance_my_claims"
+            name="My Claims"
+            parent="menu_insurance_claims"
+            action="action_insurance_my_claim"
+            sequence="32"
+            groups="leapai_insurance_management.group_insurance_user,leapai_insurance_management.group_insurance_manager"/>
+
+        <!-- Agents -->
+        <menuitem
+            id="menu_insurance_agents"
+            name="Agents"
+            parent="menu_insurance_root"
+            action="action_insurance_agent"
+            sequence="40"
+            groups="leapai_insurance_management.group_insurance_user,leapai_insurance_management.group_insurance_manager"/>
+
+        <!-- Customers -->
+        <menuitem
+            id="menu_insurance_customers"
+            name="Customers"
+            parent="menu_insurance_root"
+            action="action_insurance_customers"
+            sequence="50"
+            groups="leapai_insurance_management.group_insurance_user,leapai_insurance_management.group_insurance_manager"/>
+
+        <!-- Configuration -->
+        <menuitem
+            id="menu_insurance_configuration"
+            name="Configuration"
+            parent="menu_insurance_root"
+            sequence="100"
+            groups="leapai_insurance_management.group_insurance_manager"/>
+
+        <menuitem
+            id="menu_insurance_categories"
+            name="Categories"
+            parent="menu_insurance_configuration"
+            action="action_insurance_category"
+            sequence="101"
+            groups="leapai_insurance_management.group_insurance_manager"/>
+
+        <menuitem
+            id="menu_insurance_subcategories"
+            name="Sub-categories"
+            parent="menu_insurance_configuration"
+            action="action_insurance_subcategory"
+            sequence="102"
+            groups="leapai_insurance_management.group_insurance_manager"/>
+
+        <menuitem
+            id="menu_insurance_terms"
+            name="Policy Terms"
+            parent="menu_insurance_configuration"
+            action="action_insurance_term"
+            sequence="103"
+            groups="leapai_insurance_management.group_insurance_manager"/>
+    </data>
+</odoo>

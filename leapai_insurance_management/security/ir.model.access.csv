@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_insurance_category_user,insurance.category user,model_insurance_category,group_insurance_user,1,1,1,0
+access_insurance_category_manager,insurance.category manager,model_insurance_category,group_insurance_manager,1,1,1,1
+access_insurance_term_user,insurance.term user,model_insurance_term,group_insurance_user,1,1,1,0
+access_insurance_term_manager,insurance.term manager,model_insurance_term,group_insurance_manager,1,1,1,1
+access_insurance_agent_user,insurance.agent user,model_insurance_agent,group_insurance_user,1,1,1,0
+access_insurance_agent_manager,insurance.agent manager,model_insurance_agent,group_insurance_manager,1,1,1,1
+access_insurance_policy_user,insurance.policy user,model_insurance_policy,group_insurance_user,1,1,1,0
+access_insurance_policy_manager,insurance.policy manager,model_insurance_policy,group_insurance_manager,1,1,1,1
+access_insurance_nominee_user,insurance.nominee user,model_insurance_nominee,group_insurance_user,1,1,1,0
+access_insurance_nominee_manager,insurance.nominee manager,model_insurance_nominee,group_insurance_manager,1,1,1,1
+access_insurance_document_user,insurance.document user,model_insurance_document,group_insurance_user,1,1,1,0
+access_insurance_document_manager,insurance.document manager,model_insurance_document,group_insurance_manager,1,1,1,1
+access_insurance_claim_user,insurance.claim user,model_insurance_claim,group_insurance_user,1,1,1,0
+access_insurance_claim_manager,insurance.claim manager,model_insurance_claim,group_insurance_manager,1,1,1,1

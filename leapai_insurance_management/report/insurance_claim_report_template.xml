@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_insurance_claim_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2 class="text-center">Insurance Claim Report</h2>
+                            <hr/>
+
+                            <!-- Claim Details -->
+                            <div class="row mt-4">
+                                <div class="col-6">
+                                    <table class="table table-sm table-borderless">
+                                        <tr>
+                                            <td><strong>Claim Name:</strong></td>
+                                            <td><t t-esc="o.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Reference:</strong></td>
+                                            <td><t t-esc="o.reference or '-'"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Policy:</strong></td>
+                                            <td><t t-esc="o.policy_id.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Policy Ref:</strong></td>
+                                            <td><t t-esc="o.policy_id.reference or '-'"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Status:</strong></td>
+                                            <td><t t-esc="dict(o._fields['state'].selection).get(o.state)"/></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-6">
+                                    <table class="table table-sm table-borderless">
+                                        <tr>
+                                            <td><strong>Claimant:</strong></td>
+                                            <td><t t-esc="o.partner_id.name"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Claim Date:</strong></td>
+                                            <td><t t-esc="o.claim_date"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Reason:</strong></td>
+                                            <td><t t-esc="dict(o._fields['reason'].selection).get(o.reason)"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Claim Amount:</strong></td>
+                                            <td>
+                                                <t t-esc="o.currency_id.symbol"/>
+                                                <t t-esc="'{:,.2f}'.format(o.claim_amount)"/>
+                                            </td>
+                                        </tr>
+                                        <tr t-if="o.settlement_amount">
+                                            <td><strong>Settlement Amount:</strong></td>
+                                            <td>
+                                                <t t-esc="o.currency_id.symbol"/>
+                                                <t t-esc="'{:,.2f}'.format(o.settlement_amount)"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Reason Details -->
+                            <div class="row mt-3" t-if="o.reason_detail">
+                                <div class="col-12">
+                                    <h4>Reason Details</h4>
+                                    <p><t t-esc="o.reason_detail"/></p>
+                                </div>
+                            </div>
+
+                            <!-- Rejection Reason -->
+                            <div class="row mt-3" t-if="o.rejection_reason">
+                                <div class="col-12">
+                                    <h4>Rejection Reason</h4>
+                                    <p><t t-esc="o.rejection_reason"/></p>
+                                </div>
+                            </div>
+
+                            <!-- Settlement Info -->
+                            <div class="row mt-3" t-if="o.state == 'approved'">
+                                <div class="col-12">
+                                    <h4>Settlement Information</h4>
+                                    <table class="table table-sm table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Claim Amount</th>
+                                                <th>Settlement Amount</th>
+                                                <th>Difference</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <t t-esc="o.currency_id.symbol"/>
+                                                    <t t-esc="'{:,.2f}'.format(o.claim_amount)"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="o.currency_id.symbol"/>
+                                                    <t t-esc="'{:,.2f}'.format(o.settlement_amount or 0)"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="o.currency_id.symbol"/>
+                                                    <t t-esc="'{:,.2f}'.format(o.claim_amount - (o.settlement_amount or 0))"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="row mt-5">
+                                <div class="col-6 text-center">
+                                    <p>____________________________</p>
+                                    <p>Claims Officer Signature</p>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <p>____________________________</p>
+                                    <p>Claimant Signature</p>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
