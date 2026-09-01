@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_personal_information_docs" model="ir.ui.view">
+        <field name="name">Partner docs: personal info</field>
+        <field name="model">res.partner</field>
+        <field
+            name="inherit_id"
+            ref="partner_contact_personal_information_page.personal_information"
+        />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//page[@name='personal_information_page']//group[@name='personal_information_group']"
+            >
+                <group name="documentos">
+                    <field name='estado_civil' />
+                    <field name="rg_emissao" />
+                    <field name="rg_orgao" />
+                </group>
+                <group name="cnh">
+                    <field name="cnh" />
+                    <field name="cnh_emissao" />
+                    <field name="cnh_primhabilita" />
+                    <field name="cnh_vcto" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
