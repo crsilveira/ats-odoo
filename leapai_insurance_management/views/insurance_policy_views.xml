@@ -140,6 +140,7 @@
                     <field name="name"/>
                     <field name="reference"/>
                     <field name="category_id"/>
+                    <field name="sub_category_id"/>
                     <field name="partner_id"/>
                     <field name="agent_id"/>
                     <field name="premium_amount"/>
@@ -206,14 +207,16 @@
                     <field name="reference"/>
                     <field name="partner_id"/>
                     <field name="category_id"/>
+                    <field name="sub_category_id"/>
                     <field name="agent_id"/>
                     <filter string="Draft" name="draft" domain="[('state', '=', 'draft')]"/>
                     <filter string="Confirmed" name="confirmed" domain="[('state', '=', 'confirmed')]"/>
                     <filter string="Running" name="running" domain="[('state', '=', 'running')]"/>
                     <filter string="Expired" name="expired" domain="[('state', '=', 'expired')]"/>
                     <filter string="Cancelled" name="cancelled" domain="[('state', '=', 'cancelled')]"/>
-                    <group>
-                        <filter string="Category" name="group_by_category" context="{'group_by': 'category_id'}"/>
+                    <group>  
+                        <filter string="Tipo Seguro" name="group_by_category" context="{'group_by': 'category_id'}"/>
+                        <filter string="Seguradoras" name="group_by_sub_category" context="{'group_by': 'sub_category_id'}"/>
                         <filter string="Agent" name="group_by_agent" context="{'group_by': 'agent_id'}"/>
                         <filter string="Status" name="group_by_state" context="{'group_by': 'state'}"/>
                         <filter string="Issue Date" name="group_by_issue_date" context="{'group_by': 'issue_date'}"/>
