@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Menu Raiz do Módulo de Seguros (Caso já não exista um) -->
+    <menuitem id="menu_insurance_root"
+              name="Seguros"
+              sequence="10"
+              web_icon="insurance,static/description/icon.png"/> <!-- Substitua pelo ícone do seu módulo -->
+
+    <!-- Submenu de Operações -->
+    <menuitem id="menu_insurance_operations"
+              name="Operações"
+              parent="menu_insurance_root"
+              sequence="10"/>
+
+    <!-- Itens de Menu vinculados às Ações de Janela criadas anteriormente -->
+    <menuitem id="menu_insurance_payments"
+              name="Controle de Pagamentos"
+              parent="menu_insurance_operations"
+              action="action_insurance_payment"
+              sequence="20"/>
+
+    <menuitem id="menu_insurance_installments"
+              name="Parcelas de Clientes"
+              parent="menu_insurance_operations"
+              action="action_insurance_installment"
+              sequence="30"/>
+</odoo>

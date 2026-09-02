@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_insurance_installment_user,insurance.installment user,model_insurance_installment,leapai_insurance_management.group_insurance_user,1,1,1,0
+access_insurance_installment_manager,insurance.installment manager,model_insurance_installment,leapai_insurance_management.group_insurance_manager,1,1,1,1

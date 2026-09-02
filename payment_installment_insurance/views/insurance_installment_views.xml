@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- View de Lista Dedicada para Parcelas -->
+    <record id="view_insurance_installment_list" model="ir.ui.view">
+        <field name="name">insurance.installment.list</field>
+        <field name="model">insurance.installment</field>
+        <field name="arch" type="xml">
+            <!-- default_order força a ordenação padrão pela data de vencimento na tela -->
+            <list string="Parcelas de Seguros" default_order="data_vencimento">
+                <field name="insurance_policy_id" string="Pagamento de Origem"/>
+                <field name="name"/>
+                <field name="data_vencimento" decoration-danger="data_vencimento &lt; current_date and not enviado_message"/>
+                <!-- Exibe o total somado de todas as parcelas listadas no rodapé -->
+                <field name="valor" sum="Total Geral"/>
+                <field name="payment_mode_id" optional="show"/>                
+                <field name="enviado_message" widget="boolean_toggle"/>
+                <field name="messag_date_send" optional="show"/>
+                <field name="tipo_message" optional="hide"/>
+                <field name="parcela_paga" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- View de Busca e Filtros (Search View) -->
+    <record id="view_insurance_installment_search" model="ir.ui.view">
+        <field name="name">insurance.installment.search</field>
+        <field name="model">insurance.installment</field>
+        <field name="arch" type="xml">
+            <search string="Buscar Parcelas">
+                <field name="name"/>
+                <field name="insurance_policy_id"/>
+                <!-- Filtros Rápidos na Barra de Busca -->
+                <filter string="Mensagem Enviada" name="msg_enviada" domain="[('enviado_message', '=', True)]"/>
+                <filter string="Mensagem Pendente" name="msg_pendente" domain="[('enviado_message', '=', False)]"/>
+                <filter string="Parcelas Pagas" name="parcelas_pagas" domain="[('parcela_paga', '=', True)]"/>
+                <filter string="Parcelas Pendentes" name="parcelas_pendentes" domain="[('parcela_paga', '=', False)]"/>
+                <separator/>
+                <filter string="Vencidas" name="vencidas" domain="[('data_vencimento', '&lt;', current_date)]"/>
+                <!-- Opções de Agrupamento Dinâmico -->
+                <group expand="0" string="Agrupar Por">
+                    <filter string="Pagamento/Apólice" name="group_by_payment" context="{'group_by': 'insurance_policy_id'}"/>
+                    <filter string="Data de Vencimento" name="group_by_date" context="{'group_by': 'data_vencimento:month'}"/>
+                    <filter string="Modo de Pagamento" name="group_by_mode" context="{'group_by': 'payment_mode_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Ação de Janela para acessar a lista de todas as parcelas do sistema -->
+    <record id="action_insurance_installment" model="ir.actions.act_window">
+        <field name="name">Parcelas de Seguros</field>
+        <field name="res_model">insurance.installment</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="view_insurance_installment_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Nenhuma parcela gerada pelo sistema até o momento.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Extensão do Formulário da Apólice de Seguro -->
+    <record id="view_insurance_policy_form_inherit_payment" model="ir.ui.view">
+        <field name="name">insurance.policy.form.inherit.payment</field>
+        <field name="model">insurance.policy</field>
+        <!-- Substitua 'insurance.view_insurance_policy_form' pelo ID EXTERNO REAL da view original da apólice -->
+        <field name="inherit_id" ref="leapai_insurance_management.view_insurance_policy_form"/>
+        <field name="arch" type="xml">
+            <!-- Encontra o notebook da apólice para adicionar a nova aba de pagamentos -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Pagamentos e Parcelas" name="pagamentos_seguro">
+                    <group>
+                        <!-- Coluna Esquerda: Informações da Apólice e Valores -->
+                        <group string="Informações Gerais">
+                            <field name="premium_amount"/>
+                            <field name="payment_mode_install_id"/>
+                            <field name="enviar_message"/>
+                        </group>                        
+                        <!-- Coluna Direita: Regras de Parcelamento e Mensagens -->
+                        <group string="Configurações de Parcelas e Notificação">
+                            <field name="num_parcela"/>
+                            <field name="dia_vcto"/>
+                            <!-- Exibe o tipo de mensagem apenas se 'Enviar Mensagem' for verdadeiro -->
+                            <field name="tipo_message" invisible="not enviar_message" required="enviar_message"/>
+                            <button
+                                name="action_calcula_parcela"
+                                type="object"
+                                class="btn btn-secondary"
+                                invisible="state != 'draft'"
+                            >
+                                <i class="fa fa-cog"/> Gerar Parcelas
+                            </button>
+                        </group>
+                    </group>
+                    <field name="parcela_ids">
+                        <list editable="bottom">
+                            <!-- Substitua ou adicione aqui os campos reais do modelo 'insurance.installment' -->
+                            <field name="name" optional="show"/> 
+                            <field name="valor" optional="show"/>
+                            <field name="data_vencimento" optional="show"/>
+                            <field name="tipo_message" optional="hide"/>
+                            <field name="enviado_message" widget="boolean_toggle"/>
+                            <field name="messag_date_send" optional="show"/>
+                            <field name="parcela_paga" widget="boolean_toggle"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
